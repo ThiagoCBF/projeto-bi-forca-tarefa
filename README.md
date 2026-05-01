@@ -10,7 +10,7 @@ A evolução do sistema permitiu a implementação de um fluxo de dados mais con
 
 ## ⚠️ Confidencialidade
 
-Todas as imagens e indicadores apresentados neste documento utilizam dados fictícios, com o objetivo de preservar informações sensíveis da operação real.
+Todas as imagens, valores e indicadores apresentados neste documento utilizam **dados fictícios**, com o objetivo de preservar informações sensíveis da operação real.
 
 ---
 
@@ -46,64 +46,100 @@ Aplicação responsável pelo registro operacional das vendas, contendo:
 - geração de identificador único (id_venda)  
 - padronização dos dados no momento da entrada  
 
-📌 Interface do sistema de registro:
+📌 Interface do sistema de registro (dados fictícios):
 
 ![Streamlit Interface](images/streamlit_interface.png)
 
 ---
 
-### 2. Camada de Dados (CSV)
+### 2. Camada de Processamento e Padronização (Python - ETL)
+
+Nesta etapa são aplicados scripts em Python responsáveis pela preparação dos dados para análise, incluindo:
+
+- padronização de nomes de colunas  
+- tratamento de tipos de dados (datas, valores numéricos e categorias)  
+- validação de integridade das transações  
+- consolidação de vendas multi-itens  
+- organização do dataset para consumo analítico  
+
+---
+
+### 3. Camada de Dados (CSV)
 
 Os dados são armazenados em formato transacional estruturado, permitindo rastreabilidade completa das vendas e histórico operacional.
 
 ---
 
-### 3. Camada de Modelagem (SQL)
+### 4. Camada de Modelagem (SQL)
 
-Os dados são estruturados em modelo analítico para consultas e exploração, permitindo:
+Os dados são estruturados em modelo analítico com abordagem dimensional (Star Schema), permitindo:
 
-- análise por produto  
-- análise por vendedor  
-- análise temporal  
-- suporte a dashboards de BI  
+- consultas otimizadas por produto, vendedor e período  
+- análise de performance comercial  
+- suporte direto à construção de dashboards  
 
-📌 Modelagem de dados:
+📌 Modelagem de dados (dados fictícios):
 
 ![Modelagem de Tabelas](images/modelagem_tabelas.png)
 
 ---
 
-### 4. Camada de Visualização (Power BI)
+### 5. Camada de Visualização (Power BI)
 
-Os dados são transformados em dashboards analíticos para suporte à tomada de decisão.
+Os dados são transformados em dashboards estratégicos para suporte à tomada de decisão.
 
-#### Visão Executiva
+---
 
-Acompanhamento de KPIs principais como receita, ticket médio e evolução de vendas.
+## Visualização Estratégica e KPIs
+
+A camada de BI foi estruturada com foco em indicadores operacionais e estratégicos:
+
+### Visão Executiva
+Acompanhamento dos principais KPIs do negócio:
+- Receita total  
+- Ticket médio  
+- Volume de vendas  
+- Evolução temporal da performance  
+
+📌 Dashboard Executivo (dados fictícios):
 
 ![Dashboard Executivo](images/dashboard_executiva.png)
 
 ---
 
-#### Análise de Produtos
+### Análise de Produtos
+Foco na inteligência de portfólio:
+- produtos mais vendidos  
+- análise de giro  
+- contribuição por item na receita total  
+- identificação de produtos estratégicos  
 
-Identificação de produtos mais vendidos e análise de mix de vendas.
+📌 Dashboard Produtos (dados fictícios):
 
 ![Dashboard Produtos](images/dashboard_produtos.png)
 
 ---
 
-#### Performance Comercial
+### Performance Comercial
+Avaliação do desempenho individual da equipe:
+- ranking de vendedores  
+- volume de vendas por colaborador  
+- contribuição por faturamento  
+- comparação de performance  
 
-Avaliação de desempenho por vendedor e ranking de performance.
+📌 Dashboard Vendedores (dados fictícios):
 
 ![Dashboard Vendedores](images/dashboard_vendedores.png)
 
 ---
 
-#### Operação
+### Visão Operacional
+Monitoramento do fluxo de vendas e operação:
+- volume de transações  
+- comportamento de compra  
+- análise operacional do dia a dia  
 
-Monitoramento de fluxo operacional e visão geral das vendas.
+📌 Dashboard Operação (dados fictícios):
 
 ![Dashboard Operação](images/dashboard_operacao.png)
 
@@ -111,17 +147,17 @@ Monitoramento de fluxo operacional e visão geral das vendas.
 
 ## Competências Técnicas Aplicadas
 
-- Desenvolvimento de aplicação com Streamlit  
-- Manipulação de dados com Python (Pandas)  
-- Estruturação de dados para análise  
-- Modelagem relacional e analítica com SQL  
+- Desenvolvimento de aplicações com Streamlit  
+- Engenharia de dados com Python (Pandas)  
+- Processos de ETL e padronização de dados  
+- Modelagem de dados relacional e dimensional (SQL)  
 - Construção de dashboards com Power BI  
-- Design de pipeline de dados ponta a ponta  
+- Definição e análise de KPIs de negócio  
 
 ---
 
 ## Conclusão
 
-Esta solução demonstra a transformação de um processo operacional manual em uma arquitetura de dados estruturada, com foco em confiabilidade, organização e suporte à tomada de decisão.
+Este projeto demonstra a capacidade de transformar uma operação comercial real por meio de tecnologia. A evolução da ferramenta de coleta destaca o foco na qualidade do dado e na escalabilidade da solução analítica, consolidando competências essenciais para um profissional de Dados e BI.
 
-O sistema implementado permite capturar, estruturar e analisar dados de vendas de forma integrada, simulando um ambiente real de operação comercial com pipeline completo de dados.
+**Autor:** Thiago Ferreira
