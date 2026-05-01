@@ -1,82 +1,127 @@
-# Solução de Business Intelligence para Otimização de Gestão Comercial no Varejo
+# Solução de Business Intelligence para Gestão Comercial no Varejo
 
-##  Visão Geral
+## Visão Geral
 
-Esta solução foi desenvolvida para transformar a gestão comercial de uma loja de varejo, substituindo processos manuais por uma arquitetura de dados eficiente e automatizada.
+Esta solução foi desenvolvida para estruturar e automatizar o processo de gestão comercial de uma operação de varejo, substituindo processos manuais por uma aplicação centralizada em Streamlit e uma arquitetura de dados voltada à análise.
 
-A solução surgiu da necessidade de superar as limitações do sistema anterior baseado em Google Forms, que apresentava falhas na organização e dificuldade no registro de vendas. A evolução para uma aplicação customizada em Streamlit permitiu centralizar a captação de dados em uma interface visualmente superior e muito mais intuitiva. Com essa migração, foi possível garantir a integridade de transações complexas (multi-item), estabelecer um fluxo de dados organizado e criar um pipeline analítico robusto que gera inteligência real para a tomada de decisão do negócio.
-
-> **⚠️ Nota sobre Confidencialidade:** Todas as imagens e valores apresentados abaixo utilizam **DADOS FICTÍCIOS** para preservar informações estratégicas e comerciais do estabelecimento real.
+A evolução do sistema permitiu a implementação de um fluxo de dados mais confiável, com suporte a transações multi-itens, padronização na origem e geração de uma base analítica estruturada para consumo em ferramentas de Business Intelligence.
 
 ---
 
-##  Contexto e Evolução da Maturidade
+## ⚠️ Confidencialidade
 
-Identifiquei que a gestão via formulários simples gerava ruído e perda de informação na loja. Ao desenvolver uma aplicação personalizada com Streamlit, consegui estruturar os dados de forma que o registro de vendas reflita a realidade do estoque e do financeiro. Além do ganho visual e da facilidade de uso para quem opera no dia a dia, a solução permitiu transformar dados brutos em inteligência de negócio real.
-
-###  Stack Técnica Aplicada
-
-*   **Interface de Ingestão (UX):** Python (Streamlit) 
-*   **Armazenamento Transacional:** Local Data Store (CSV/SQLite).
-*   **Tratamento / ETL:** Python (Pandas).
-*   **Modelagem Analítica:** SQL.
-*   **Business Intelligence:** Power BI.
+Todas as imagens e indicadores apresentados neste documento utilizam dados fictícios, com o objetivo de preservar informações sensíveis da operação real.
 
 ---
 
-##  Arquitetura da Solução
+## Contexto do Problema
 
-### 1️ Ingestão Customizada (Python/Streamlit)
-Desenvolvimento de uma aplicação web dedicada para o ponto de venda (PDV), implementando:
-*   **Lógica Multi-item:** Registro de múltiplos produtos em uma única transação vinculada a um `id_venda` único.
-*   **Data Quality na Origem:** Cálculos de subtotal em tempo real e campos pré-definidos, eliminando erros humanos e garantindo a padronização.
+O processo anterior baseado em formulários apresentava limitações como:
+- baixa estruturação dos dados
+- dificuldade no registro de múltiplos produtos por venda
+- inconsistências na consolidação para análise
 
-### 2️ Modelagem e Estruturação (SQL)
-Transformação dos dados operacionais em uma base analítica escalável utilizando conceitos de **Star Schema**. A estruturação permite consultas rápidas e organizadas para ferramentas de BI.
-
-![Modelagem de Dados](images/modelagem_tabelas.png)
-
+Para resolver esse cenário, foi desenvolvida uma aplicação em Streamlit que centraliza o registro de vendas e estrutura os dados já na origem.
 
 ---
 
-##  Visualização Estratégica (Power BI)
+## Stack Técnica
 
-Abaixo estão detalhadas as visões do dashboard desenvolvido para suporte à gestão:
+- Interface de Ingestão: Streamlit (Python)  
+- Armazenamento: CSV (camada transacional)  
+- Processamento de Dados: Python (Pandas)  
+- Modelagem de Dados: SQL (modelo dimensional)  
+- Visualização: Power BI  
 
-###  Visão Executiva
-Foco nos principais KPIs de saúde financeira: Receita, Lucro, Ticket Médio e tendências temporais para suporte à diretoria.
+---
+
+## Arquitetura da Solução
+
+### 1. Camada de Ingestão (Streamlit)
+
+Aplicação responsável pelo registro operacional das vendas, contendo:
+
+- suporte a múltiplos produtos por transação (carrinho de compras)  
+- cálculo automático de subtotais e total da venda  
+- geração de identificador único (id_venda)  
+- padronização dos dados no momento da entrada  
+
+📌 Interface do sistema de registro:
+
+![Streamlit Interface](images/streamlit_interface.png)
+
+---
+
+### 2. Camada de Dados (CSV)
+
+Os dados são armazenados em formato transacional estruturado, permitindo rastreabilidade completa das vendas e histórico operacional.
+
+---
+
+### 3. Camada de Modelagem (SQL)
+
+Os dados são estruturados em modelo analítico para consultas e exploração, permitindo:
+
+- análise por produto  
+- análise por vendedor  
+- análise temporal  
+- suporte a dashboards de BI  
+
+📌 Modelagem de dados:
+
+![Modelagem de Tabelas](images/modelagem_tabelas.png)
+
+---
+
+### 4. Camada de Visualização (Power BI)
+
+Os dados são transformados em dashboards analíticos para suporte à tomada de decisão.
+
+#### Visão Executiva
+
+Acompanhamento de KPIs principais como receita, ticket médio e evolução de vendas.
+
 ![Dashboard Executivo](images/dashboard_executiva.png)
-*Visualização de performance consolidada (Dados Fictícios).*
 
-###  Produtos & Categorias
-Análise detalhada de mix de produtos, curva ABC e lucratividade por item para otimização de compras.
+---
+
+#### Análise de Produtos
+
+Identificação de produtos mais vendidos e análise de mix de vendas.
+
 ![Dashboard Produtos](images/dashboard_produtos.png)
-*Análise de giro e lucratividade (Dados Fictícios).*
 
-###  Performance Comercial
-Acompanhamento de metas, produtividade individual e volume de vendas por colaborador.
+---
+
+#### Performance Comercial
+
+Avaliação de desempenho por vendedor e ranking de performance.
+
 ![Dashboard Vendedores](images/dashboard_vendedores.png)
-*Ranking de performance de vendas (Dados Fictícios).*
 
-###  Operação & Estoque
-Monitoramento de estoque crítico, giro de produtos e identificação de capital imobilizado.
+---
+
+#### Operação
+
+Monitoramento de fluxo operacional e visão geral das vendas.
+
 ![Dashboard Operação](images/dashboard_operacao.png)
-*Gestão de estoque e indicadores operacionais (Dados Fictícios).*
 
 ---
 
-##  Competências Técnicas Aplicadas
+## Competências Técnicas Aplicadas
 
-*   **Application Development:** Streamlit & UI Design para ferramentas internas.
-*   **Data Engineering:** ETL, Data Cleaning e Validation.
-*   **Programming:** Python (Pandas).
-*   **Database:** SQL & Data Modeling (Star Schema / Dimensional).
-*   **Analytics:** Power BI, Linguagem DAX e KPI Design.
+- Desenvolvimento de aplicação com Streamlit  
+- Manipulação de dados com Python (Pandas)  
+- Estruturação de dados para análise  
+- Modelagem relacional e analítica com SQL  
+- Construção de dashboards com Power BI  
+- Design de pipeline de dados ponta a ponta  
 
 ---
 
-##  Conclusão
+## Conclusão
 
-Este projeto demonstra a capacidade de transformar uma operação comercial real por meio de tecnologia. A evolução da ferramenta de coleta destaca o foco na qualidade do dado e na escalabilidade da solução analítica, consolidando competências essenciais para um profissional de Dados e BI.
+Esta solução demonstra a transformação de um processo operacional manual em uma arquitetura de dados estruturada, com foco em confiabilidade, organização e suporte à tomada de decisão.
 
-**Autor:** Thiago Ferreira
+O sistema implementado permite capturar, estruturar e analisar dados de vendas de forma integrada, simulando um ambiente real de operação comercial com pipeline completo de dados.
