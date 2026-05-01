@@ -1,250 +1,82 @@
 # Solução de Business Intelligence para Otimização de Gestão Comercial no Varejo
 
-## Visão Geral
-Esta solução foi desenvolvida para otimizar processos de gestão comercial por meio da estruturação de dados operacionais, transformação analítica e geração de inteligência gerencial aplicada a um contexto varejista real.
+##  Visão Geral
 
-O trabalho foi conduzido com foco em organização operacional, padronização de informações, criação de pipeline analítico e desenvolvimento de dashboards estratégicos para suporte à tomada de decisão.
+Esta solução foi desenvolvida para transformar a gestão comercial de uma loja de varejo, substituindo processos manuais por uma arquitetura de dados eficiente e automatizada.
 
-Por questões de confidencialidade, informações comerciais, operacionais e estratégicas foram preservadas por meio de anonimização e adaptação estrutural. Esta documentação apresenta exclusivamente metodologia, arquitetura, stack técnica e capacidades analíticas implementadas.
+A solução surgiu da necessidade de superar as limitações do sistema anterior baseado em Google Forms, que apresentava falhas na organização e dificuldade no registro de vendas. A evolução para uma aplicação customizada em Streamlit permitiu centralizar a captação de dados em uma interface visualmente superior e muito mais intuitiva. Com essa migração, foi possível garantir a integridade de transações complexas (multi-item), estabelecer um fluxo de dados organizado e criar um pipeline analítico robusto que gera inteligência real para a tomada de decisão do negócio.
 
----
-
-# Contexto de Atuação
-Desenvolvimento de uma solução prática de dados voltada à otimização de processos comerciais, análise de performance e organização estratégica de informações.
-
-## Principais responsabilidades:
-- Estruturação da coleta operacional de dados
-- Organização e centralização de informações comerciais
-- Tratamento e padronização de bases
-- Validação e controle de qualidade de dados
-- Modelagem relacional para análise
-- Desenvolvimento de consultas analíticas com SQL
-- Construção de dashboards estratégicos
-- Definição de indicadores executivos, comerciais e operacionais
+> **⚠️ Nota sobre Confidencialidade:** Todas as imagens e valores apresentados abaixo utilizam **DADOS FICTÍCIOS** para preservar informações estratégicas e comerciais do estabelecimento real.
 
 ---
 
-# Objetivo Estratégico
-Desenvolvido para transformar registros operacionais em uma estrutura analítica robusta, permitindo visão consolidada sobre:
+##  Contexto e Evolução da Maturidade
 
-- Faturamento
-- Lucro
-- Ticket médio
-- Performance comercial
-- Performance por vendedor
-- Performance por produto
-- Gestão de estoque
-- Eficiência operacional
+Identifiquei que a gestão via formulários simples gerava ruído e perda de informação na loja. Ao desenvolver uma aplicação personalizada com Streamlit, consegui estruturar os dados de forma que o registro de vendas reflita a realidade do estoque e do financeiro. Além do ganho visual e da facilidade de uso para quem opera no dia a dia, a solução permitiu transformar dados brutos em inteligência de negócio real.
 
----
+###  Stack Técnica Aplicada
 
-# Stack Técnica Aplicada
-
-## Coleta Operacional:
-Google Forms
-
-## Armazenamento Inicial:
-Google Sheets
-
-## Tratamento / ETL:
-Python (Pandas)
-
-## Modelagem Analítica:
-SQL
-
-## Business Intelligence:
-Power BI
-
-## Documentação Técnica:
-dbdiagram.io + GitHub
+*   **Interface de Ingestão (UX):** Python (Streamlit) — 
+*   **Armazenamento Transacional:** Local Data Store (CSV/SQLite).
+*   **Tratamento / ETL:** Python (Pandas).
+*   **Modelagem Analítica:** SQL.
+*   **Business Intelligence:** Power BI.
 
 ---
 
-# Arquitetura da Solução
+##  Arquitetura da Solução
 
-## 1. Coleta Operacional
-Implementada para padronizar o registro de vendas e operações comerciais.
+### 1️ Ingestão Customizada (Python/Streamlit)
+Desenvolvimento de uma aplicação web dedicada para o ponto de venda (PDV), implementando:
+*   **Lógica Multi-item:** Registro de múltiplos produtos em uma única transação vinculada a um `id_venda` único.
+*   **Data Quality na Origem:** Cálculos de subtotal em tempo real e campos pré-definidos, eliminando erros humanos e garantindo a padronização.
 
----
+### 2️ Modelagem e Estruturação (SQL)
+Transformação dos dados operacionais em uma base analítica escalável utilizando conceitos de **Star Schema**. A estruturação permite consultas rápidas e organizadas para ferramentas de BI.
 
-## 2. Centralização de Dados
-Estruturada em Google Sheets como camada inicial de armazenamento bruto.
-
----
-
-## 3. Tratamento e Padronização com Python
-Desenvolvido para garantir consistência e qualidade analítica por meio de:
-
-- Limpeza de dados
-- Padronização estrutural
-- Conversão de tipos
-- Remoção de duplicidades
-- Validação
-- Análise exploratória inicial
+![Modelagem de Dados](images/modelagem_tabelas.png)
+*Figura 1: Esquema relacional das tabelas fato e dimensão (Dados Fictícios).*
 
 ---
 
-## 4. Modelagem e Estruturação com SQL
-Aplicado para transformar dados operacionais em base analítica escalável:
+##  Visualização Estratégica (Power BI)
 
-- Consolidação de vendas
-- Criação de tabelas fato e dimensão
-- Ranking de produtos
-- Ranking de vendedores
-- Performance por forma de pagamento
-- Análise de estoque crítico
+Abaixo estão detalhadas as visões do dashboard desenvolvido para suporte à gestão:
 
----
+###  Visão Executiva
+Foco nos principais KPIs de saúde financeira: Receita, Lucro, Ticket Médio e tendências temporais para suporte à diretoria.
+![Dashboard Executivo](images/dashboard_executiva.png)
+*Visualização de performance consolidada (Dados Fictícios).*
 
-## 5. Visualização Estratégica
-Desenvolvida em Power BI para consolidar inteligência gerencial em dashboards multiárea.
+###  Produtos & Categorias
+Análise detalhada de mix de produtos, curva ABC e lucratividade por item para otimização de compras.
+![Dashboard Produtos](images/dashboard_produtos.png)
+*Análise de giro e lucratividade (Dados Fictícios).*
 
----
+###  Performance Comercial
+Acompanhamento de metas, produtividade individual e volume de vendas por colaborador.
+![Dashboard Vendedores](images/dashboard_vendedores.png)
+*Ranking de performance de vendas (Dados Fictícios).*
 
-# Estrutura Analítica Implementada
-## Principais tabelas:
-- tb_vendas
-- tb_itens_venda
-- tb_produtos
-- tb_vendedores
-
-## Fonte operacional:
-- dados_brutos
+###  Operação & Estoque
+Monitoramento de estoque crítico, giro de produtos e identificação de capital imobilizado.
+![Dashboard Operação](images/dashboard_operacao.png)
+*Gestão de estoque e indicadores operacionais (Dados Fictícios).*
 
 ---
 
-# Modelagem Relacional
-![Modelagem das Tabelas](./images/modelagem_tabelas.png)
+##  Competências Técnicas Aplicadas
+
+*   **Application Development:** Streamlit & UI Design para ferramentas internas.
+*   **Data Engineering:** ETL, Data Cleaning e Validation.
+*   **Programming:** Python (Pandas).
+*   **Database:** SQL & Data Modeling (Star Schema / Dimensional).
+*   **Analytics:** Power BI, Linguagem DAX e KPI Design.
 
 ---
 
-# Dashboards Estratégicos Desenvolvidos
+##  Conclusão
 
-# Página 1 — Visão Executiva
-### Desenvolvida para análise de:
-- Receita
-- Lucro
-- Ticket Médio
-- Formas de pagamento
-- Evolução temporal de vendas
+Este projeto demonstra a capacidade de transformar uma operação comercial real por meio de tecnologia. A evolução da ferramenta de coleta destaca o foco na qualidade do dado e na escalabilidade da solução analítica, consolidando competências essenciais para um profissional de Dados e BI.
 
-![Dashboard Executivo](./images/dashboard_executiva.png)
-
----
-
-# Página 2 — Produtos & Categorias
-### Desenvolvida para análise de:
-- Produtos mais vendidos
-- Produtos mais lucrativos
-- Categorias estratégicas
-- Estoque crítico
-
-![Dashboard Produtos](./images/dashboard_produtos.png)
-
----
-
-# Página 3 — Performance Comercial
-### Desenvolvida para análise de:
-- Faturamento por vendedor
-- Ticket médio
-- Volume de vendas
-- Ranking de performance
-
-![Dashboard Vendedores](./images/dashboard_vendedores.png)
-
----
-
-# Página 4 — Operação & Estoque
-### Desenvolvida para análise de:
-- Gestão de estoque
-- Produtos críticos
-- Capital imobilizado
-- Potencial operacional
-
-![Dashboard Operação](./images/dashboard_operacao.png)
-
----
-
-# Entregas Técnicas
-
-## Python:
-- tratamento_dados.py
-- validacao_dados.py
-- analise_exploratoria.py
-
-## SQL:
-- Consolidação de dados transacionais
-- Estruturação relacional
-- Consultas gerenciais
-- Performance comercial
-- Análise operacional
-
----
-
-# Indicadores Estratégicos Desenvolvidos
-- Faturamento Total
-- Lucro Total
-- Ticket Médio
-- Total de Vendas
-- Performance por Produto
-- Performance por Categoria
-- Performance por Vendedor
-- Estoque Crítico
-- Potencial de Receita
-
----
-
-# Competências Técnicas Aplicadas
-- Data Collection
-- ETL
-- Data Cleaning
-- Data Validation
-- Python (Pandas)
-- SQL
-- Data Modeling
-- Power BI
-- DAX
-- KPI Design
-- Business Intelligence
-- Data Documentation
-
----
-
-# Diferenciais da Solução
-- Aplicação prática em operação comercial real
-- Estrutura ponta a ponta
-- Integração entre operação, análise e gestão
-- Visão executiva, comercial e operacional
-- Arquitetura documentada
-- Proteção de informações estratégicas
-- Organização compatível com portfólio profissional
-
----
-
-# Confidencialidade
-Toda a documentação foi estruturada para preservar integralmente informações estratégicas, operacionais e comerciais. Dados, nomes e elementos sensíveis foram anonimizados ou adaptados exclusivamente para demonstração técnica e portfólio profissional.
-
----
-
-# Resultados e Impacto
-A implementação desta solução permitiu estruturar uma base comercial descentralizada em uma arquitetura analítica organizada, ampliando capacidade de acompanhamento gerencial, análise de performance e suporte estratégico à tomada de decisão.
-
-## Impactos principais:
-- Padronização operacional
-- Melhoria na organização de dados
-- Visão consolidada de performance
-- Estruturação de KPIs estratégicos
-- Fortalecimento da gestão comercial orientada por dados
-- Base preparada para evolução analítica
-
----
-
-# Conclusão
-Em conclusão, esta solução demonstra aplicação prática de análise de dados, Business Intelligence, tratamento analítico e organização estratégica de informações em contexto comercial, consolidando competências técnicas em Python, SQL, Power BI e documentação estruturada.
-
----
-
-# Autor
-## Thiago Ferreira
-
-Desenvolvido como experiência prática aplicada em Dados, BI e Analytics, com foco em estruturação profissional, capacidade analítica e desenvolvimento técnico orientado a negócios.
+**Autor:** Thiago Ferreira
