@@ -1,154 +1,192 @@
-# Projeto de Business Intelligence para Gestão Comercial de Varejo
+# Solução de Business Intelligence para Otimização de Gestão Comercial no Varejo
 
 ## Visão Geral
-Este projeto foi desenvolvido como uma solução de Business Intelligence aplicada a uma operação comercial varejista real, com foco em estruturar dados operacionais, transformar informações transacionais em indicadores estratégicos e fornecer suporte visual à tomada de decisão por meio de dashboards gerenciais.
+Esta solução foi desenvolvida para otimizar processos de gestão comercial por meio da estruturação de dados operacionais, transformação analítica e geração de inteligência gerencial aplicada a um contexto varejista real.
 
-Por questões de confidencialidade, dados operacionais, nomes e informações sensíveis foram anonimizados. Este repositório apresenta a arquitetura, metodologia, modelagem e resultados analíticos do projeto.
+O trabalho foi conduzido com foco em organização operacional, padronização de informações, criação de pipeline analítico e desenvolvimento de dashboards estratégicos para suporte à tomada de decisão.
 
----
-
-# Objetivo do Projeto
-Desenvolver uma estrutura completa de análise de dados para gestão comercial, abrangendo:
-
-- Coleta padronizada de vendas
-- Estruturação e transformação de dados
-- Modelagem relacional
-- Construção de KPIs estratégicos
-- Dashboards executivos e operacionais
-- Análise de vendas, produtos, vendedores e estoque
+Por questões de confidencialidade, informações comerciais, operacionais e estratégicas foram preservadas por meio de anonimização e adaptação estrutural. Esta documentação apresenta exclusivamente metodologia, arquitetura, stack técnica e capacidades analíticas implementadas.
 
 ---
 
-# Problema de Negócio
-A operação comercial possuía coleta de dados descentralizada e ausência de visão consolidada sobre:
+# Contexto de Atuação
+Desenvolvimento de uma solução prática de dados voltada à otimização de processos comerciais, análise de performance e organização estratégica de informações.
+
+## Principais responsabilidades:
+- Estruturação da coleta operacional de dados
+- Organização e centralização de informações comerciais
+- Tratamento e padronização de bases
+- Validação e controle de qualidade de dados
+- Modelagem relacional para análise
+- Desenvolvimento de consultas analíticas com SQL
+- Construção de dashboards estratégicos
+- Definição de indicadores executivos, comerciais e operacionais
+
+---
+
+# Objetivo Estratégico
+Desenvolvido para transformar registros operacionais em uma estrutura analítica robusta, permitindo visão consolidada sobre:
 
 - Faturamento
 - Lucro
 - Ticket médio
-- Performance de vendedores
-- Produtos mais vendidos
-- Produtos mais lucrativos
-- Estoque crítico
-- Capital parado em estoque
+- Performance comercial
+- Performance por vendedor
+- Performance por produto
+- Gestão de estoque
+- Eficiência operacional
 
 ---
 
-# Solução Desenvolvida
-Foi implementado um pipeline de Business Intelligence utilizando ferramentas acessíveis e foco em automação e gestão:
+# Stack Técnica Aplicada
 
-## Coleta:
-- Google Forms
+## Coleta Operacional:
+Google Forms
 
-## Armazenamento:
-- Google Sheets
+## Armazenamento Inicial:
+Google Sheets
 
-## Transformação / ETL:
-- Power Query
+## Tratamento / ETL:
+Python (Pandas)
 
-## Modelagem:
-- Estrutura relacional com tabelas fato e dimensão
+## Modelagem Analítica:
+SQL
 
-## Visualização:
-- Power BI
+## Business Intelligence:
+Power BI
 
-## Métricas:
-- DAX (Data Analysis Expressions)
+## Documentação Técnica:
+dbdiagram.io + GitHub
 
 ---
 
-# Modelagem de Dados
-A estrutura foi organizada com base em modelagem relacional para garantir escalabilidade analítica.
+# Arquitetura da Solução
 
-## Tabelas principais:
-- `tb_vendas`
-- `tb_itens_venda`
-- `tb_produtos`
-- `tb_vendedores`
+## 1. Coleta Operacional
+Implementada para padronizar o registro de vendas e operações comerciais.
+
+---
+
+## 2. Centralização de Dados
+Estruturada em Google Sheets como camada inicial de armazenamento bruto.
+
+---
+
+## 3. Tratamento e Padronização com Python
+Desenvolvido para garantir consistência e qualidade analítica por meio de:
+
+- Limpeza de dados
+- Padronização estrutural
+- Conversão de tipos
+- Remoção de duplicidades
+- Validação
+- Análise exploratória inicial
+
+---
+
+## 4. Modelagem e Estruturação com SQL
+Aplicado para transformar dados operacionais em base analítica escalável:
+
+- Consolidação de vendas
+- Criação de tabelas fato e dimensão
+- Ranking de produtos
+- Ranking de vendedores
+- Performance por forma de pagamento
+- Análise de estoque crítico
+
+---
+
+## 5. Visualização Estratégica
+Desenvolvida em Power BI para consolidar inteligência gerencial em dashboards multiárea.
+
+---
+
+# Estrutura Analítica Implementada
+## Principais tabelas:
+- tb_vendas
+- tb_itens_venda
+- tb_produtos
+- tb_vendedores
 
 ## Fonte operacional:
-- `dados_brutos`
+- dados_brutos
 
 ---
 
-# Modelo Relacional
-![Modelagem das Tabelas](ForçaTarefa/images/modelagem_tabelas.png)
+# Modelagem Relacional
+![Modelagem das Tabelas](./images/modelagem_tabelas.png)
 
 ---
 
-# Dashboards Desenvolvidos
+# Dashboards Estratégicos Desenvolvidos
 
 # Página 1 — Visão Executiva
-## Indicadores:
-- Faturamento Total
-- Lucro Total
+### Desenvolvida para análise de:
+- Receita
+- Lucro
 - Ticket Médio
-- Total de Vendas
-
-## Análises:
-- Evolução temporal de vendas
 - Formas de pagamento
-- Ranking comercial
+- Evolução temporal de vendas
 
-![Dashboard Executivo](ForçaTarefa/images/dashboard_executiva.png)
+![Dashboard Executivo](./images/dashboard_executiva.png)
 
 ---
 
 # Página 2 — Produtos & Categorias
-## Indicadores:
+### Desenvolvida para análise de:
 - Produtos mais vendidos
 - Produtos mais lucrativos
-- Performance por categoria
+- Categorias estratégicas
 - Estoque crítico
 
-## Análises:
-- Top 10 vendas
-- Top 10 lucro
-- Gestão de portfólio
-- Reposição
-
-![Dashboard Produtos](ForçaTarefa/images/dashboard_produtos.png)
+![Dashboard Produtos](./images/dashboard_produtos.png)
 
 ---
 
-# Página 3 — Performance de Vendedores
-## Indicadores:
+# Página 3 — Performance Comercial
+### Desenvolvida para análise de:
 - Faturamento por vendedor
-- Lucro por vendedor
 - Ticket médio
 - Volume de vendas
+- Ranking de performance
 
-## Análises:
-- Ranking comercial
-- Performance temporal
-- Eficiência de vendas
-
-![Dashboard Vendedores](ForçaTarefa/images/dashboard_vendedores.png)
+![Dashboard Vendedores](./images/dashboard_vendedores.png)
 
 ---
 
-# Página 4 — Estoque & Operação
-## Indicadores:
-- Estoque total
-- Valor em estoque
+# Página 4 — Operação & Estoque
+### Desenvolvida para análise de:
+- Gestão de estoque
 - Produtos críticos
-- Potencial de venda
+- Capital imobilizado
+- Potencial operacional
 
-## Análises:
-- Capital parado
-- Risco de ruptura
-- Saúde operacional
-
-![Dashboard Operação](ForçaTarefa/images/dashboard_operacao.png)
+![Dashboard Operação](./images/dashboard_operacao.png)
 
 ---
 
-# Principais KPIs Construídos
+# Entregas Técnicas
+
+## Python:
+- tratamento_dados.py
+- validacao_dados.py
+- analise_exploratoria.py
+
+## SQL:
+- Consolidação de dados transacionais
+- Estruturação relacional
+- Consultas gerenciais
+- Performance comercial
+- Análise operacional
+
+---
+
+# Indicadores Estratégicos Desenvolvidos
 - Faturamento Total
 - Lucro Total
 - Ticket Médio
 - Total de Vendas
-- Quantidade Vendida
-- Margem por Produto
+- Performance por Produto
 - Performance por Categoria
 - Performance por Vendedor
 - Estoque Crítico
@@ -156,65 +194,57 @@ A estrutura foi organizada com base em modelagem relacional para garantir escala
 
 ---
 
-# Principais Insights Gerados
-- Identificação de produtos de maior giro vs maior margem
-- Análise de vendedores por volume e qualidade de vendas
-- Visão de categorias estratégicas
-- Mapeamento de estoque crítico
-- Identificação de capital parado
-- Estruturação de gestão comercial orientada por dados
-
----
-
-# Tecnologias Utilizadas
-- Google Forms
-- Google Sheets
-- Power Query
+# Competências Técnicas Aplicadas
+- Data Collection
+- ETL
+- Data Cleaning
+- Data Validation
+- Python (Pandas)
+- SQL
+- Data Modeling
 - Power BI
 - DAX
-- dbdiagram.io
-
----
-
-# Diferenciais do Projeto
-- Aplicação em contexto comercial real
-- Estruturação ponta a ponta (coleta → transformação → BI)
-- Modelagem relacional
-- Dashboard multiárea
-- Foco em tomada de decisão
-- Visão executiva + operacional
-
----
-
-# Aprendizados Técnicos
-Durante o desenvolvimento deste projeto, foram aplicados conceitos de:
-
-- ETL
-- Data Modeling
-- Business Intelligence
 - KPI Design
-- Data Visualization
-- Power Query
-- DAX
-- Gestão orientada por dados
+- Business Intelligence
+- Data Documentation
 
 ---
 
-# Observação de Confidencialidade
-Este projeto foi publicado exclusivamente para fins de portfólio profissional. Todos os dados, nomes, valores e elementos sensíveis foram anonimizados ou adaptados para preservar confidencialidade operacional.
+# Diferenciais da Solução
+- Aplicação prática em operação comercial real
+- Estrutura ponta a ponta
+- Integração entre operação, análise e gestão
+- Visão executiva, comercial e operacional
+- Arquitetura documentada
+- Proteção de informações estratégicas
+- Organização compatível com portfólio profissional
 
 ---
 
-# Próximos Passos
-- Evolução para SQL como camada analítica
-- Automação expandida
-- Forecast de vendas
-- Análise preditiva
-- Expansão para engenharia de dados
+# Confidencialidade
+Toda a documentação foi estruturada para preservar integralmente informações estratégicas, operacionais e comerciais. Dados, nomes e elementos sensíveis foram anonimizados ou adaptados exclusivamente para demonstração técnica e portfólio profissional.
+
+---
+
+# Resultados e Impacto
+A implementação desta solução permitiu estruturar uma base comercial descentralizada em uma arquitetura analítica organizada, ampliando capacidade de acompanhamento gerencial, análise de performance e suporte estratégico à tomada de decisão.
+
+## Impactos principais:
+- Padronização operacional
+- Melhoria na organização de dados
+- Visão consolidada de performance
+- Estruturação de KPIs estratégicos
+- Fortalecimento da gestão comercial orientada por dados
+- Base preparada para evolução analítica
+
+---
+
+# Conclusão
+Em conclusão, esta solução demonstra aplicação prática de análise de dados, Business Intelligence, tratamento analítico e organização estratégica de informações em contexto comercial, consolidando competências técnicas em Python, SQL, Power BI e documentação estruturada.
 
 ---
 
 # Autor
 ## Thiago Ferreira
 
-Projeto independente com foco em desenvolvimento profissional em Dados, BI e Analytics.
+Desenvolvido como experiência prática aplicada em Dados, BI e Analytics, com foco em estruturação profissional, capacidade analítica e desenvolvimento técnico orientado a negócios.
