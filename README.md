@@ -71,7 +71,7 @@ A estrutura foi organizada com base em modelagem relacional para garantir escala
 ---
 
 # Modelo Relacional
-![Modelagem das Tabelas](./images/modelagem_tabelas.png)
+![Modelagem das Tabelas](ForçaTarefa/images/modelagem_tabelas.png)
 
 ---
 
@@ -89,7 +89,7 @@ A estrutura foi organizada com base em modelagem relacional para garantir escala
 - Formas de pagamento
 - Ranking comercial
 
-![Dashboard Executivo](./images/dashboard_executiva.png)
+![Dashboard Executivo](ForçaTarefa/images/dashboard_executiva.png)
 
 ---
 
@@ -106,7 +106,7 @@ A estrutura foi organizada com base em modelagem relacional para garantir escala
 - Gestão de portfólio
 - Reposição
 
-![Dashboard Produtos](./images/dashboard_produtos.png)
+![Dashboard Produtos](ForçaTarefa/images/dashboard_produtos.png)
 
 ---
 
@@ -122,7 +122,7 @@ A estrutura foi organizada com base em modelagem relacional para garantir escala
 - Performance temporal
 - Eficiência de vendas
 
-![Dashboard Vendedores](./images/dashboard_vendedores.png)
+![Dashboard Vendedores](ForçaTarefa/images/dashboard_vendedores.png)
 
 ---
 
@@ -138,7 +138,7 @@ A estrutura foi organizada com base em modelagem relacional para garantir escala
 - Risco de ruptura
 - Saúde operacional
 
-![Dashboard Operação](./images/dashboard_operacao.png)
+![Dashboard Operação](ForçaTarefa/images/dashboard_operacao.png)
 
 ---
 
